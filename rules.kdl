@@ -1,0 +1,34 @@
+window-rule {
+    match title=r#"^Rename.*$"# 
+    match app-id="^mpv$"
+    open-floating true
+}
+
+window-rule {
+    match app-id="^obsidian$"
+    match app-id="^thunar$"
+    open-maximized true
+    opacity 0.8
+}
+
+window-rule {
+    match app-id="^librewolf$"
+    match app-id="^qView$"
+    open-maximized true
+}
+
+window-rule {
+    match title=r#"^(Open File|Open folder|File Upload|Save|Import|Export)"#
+    match app-id="^localsend_app$"
+    open-floating true
+    min-width 900
+    max-width 900
+    min-height 650
+    max-height 650
+}
+
+layer-rule { match namespace="^awww-daemon$"; place-within-backdrop true; }
+window-rule { match app-id="^Cromite$"; opacity 0.95; }
+window-rule { match title=r#"^SimpleX$"#; open-floating true; opacity 0.9; }
+window-rule { match app-id=r#"^org\.keepassxc\.KeePassXC$"#; block-out-from "screen-capture"; }
+window-rule { match title=r#"^File Operation Progress$"#; open-floating true; max-height 120; }
