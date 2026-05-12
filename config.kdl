@@ -1,0 +1,44 @@
+prefer-no-csd
+animations { }
+include "binds.kdl"
+include "rules.kdl"
+hotkey-overlay { skip-at-startup; }
+
+spawn-at-startup "waybar"
+spawn-at-startup "hyprsunset"
+spawn-at-startup "awww-daemon"
+spawn-at-startup "wl-paste" "--watch" "cliphist" "store"
+spawn-sh-at-startup "~/.config/niri/scripts/wall.sh start"
+spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
+screenshot-path "~/Pictures/Screenshots/Screenshot %Y-%m-%d %H-%M-%S.png"
+
+input {
+    keyboard {
+        xkb { }
+        numlock
+    }
+    mouse { }
+    focus-follows-mouse max-scroll-amount="95%"
+    touchpad { tap; scroll-method "two-finger"; }
+}
+
+output "eDP-1" { scale 1; mode "1920x1080"; }
+//output "DP-1" {
+//    scale 1
+//    mode "3840x2160@240"
+//    variable-refresh-rate on-demand=true
+//}
+
+layout {
+    gaps 1
+    focus-ring { off; }
+    preset-column-widths {
+        proportion 0.33333
+        proportion 0.5
+        proportion 0.66667
+    }
+    always-center-single-column
+    center-focused-column "never"
+    background-color "transparent"
+    default-column-width { proportion 0.5; }
+}
